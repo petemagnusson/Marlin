@@ -1189,11 +1189,12 @@
   // a feed tube. Requires 4 bytes SRAM per sensor, plus 4 bytes overhead.
   //#define FILAMENT_RUNOUT_DISTANCE_MM 25
 
-  #ifdef FILAMENT_RUNOUT_DISTANCE_MM
+  #ifdef FILAMENT_RUNOUT_DISTANCE_MM 7
     // Enable this option to use an encoder disc that toggles the runout pin
     // as the filament moves. (Be sure to set FILAMENT_RUNOUT_DISTANCE_MM
     // large enough to avoid false positives.)
-    //#define FILAMENT_MOTION_SENSOR
+    // Disable for smart filament sensor
+    #define FILAMENT_MOTION_SENSOR
   #endif
 #endif
 
