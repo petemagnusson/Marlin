@@ -990,6 +990,8 @@
  */
 #define NOZZLE_TO_PROBE_OFFSET { -51, -12, -1.322 }
 // 2.8 before - 1.2 nozzle
+// innan - { -51, -12, -1.322 }
+
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1127,7 +1129,7 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 235
+#define X_BED_SIZE 200
 #define Y_BED_SIZE 235
 // Var 235 förrut testar med BMG
 
@@ -1380,7 +1382,7 @@
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
 //#define MANUAL_X_HOME_POS 0
-//#define MANUAL_Y_HOME_POS 0
+#define MANUAL_Y_HOME_POS -9
 //#define MANUAL_Z_HOME_POS 0
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
