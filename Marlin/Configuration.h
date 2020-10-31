@@ -997,14 +997,14 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -51, -12, -1.322 }
+#define NOZZLE_TO_PROBE_OFFSET { -26.6, 0, -1.322 }
 // 2.8 before - 1.2 nozzle
-// innan - { -51, -12, -1.322 }
+// Hero Me Gen 5 - { -51, -12, -1.322 }
 
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 60
+#define PROBING_MARGIN 25
 
 //var 25
 
@@ -1138,7 +1138,7 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 200
+#define X_BED_SIZE 235
 #define Y_BED_SIZE 235
 // Var 235 förrut testar med BMG
 
