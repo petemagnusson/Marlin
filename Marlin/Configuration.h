@@ -818,7 +818,8 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.08  // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.03  // (mm) Distance from real junction edge
+//  #define JUNCTION_DEVIATION_MM 0.08  // (mm) Distance from real junction edge - default
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
@@ -831,7 +832,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION
+#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -992,11 +993,13 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -43.7, -7.2, -2.13 }
+#define NOZZLE_TO_PROBE_OFFSET { 53, -15, -2.301 }
+// #define NOZZLE_TO_PROBE_OFFSET { -43.7, -7.2, -2.13 } - Default setup with BLTouch Mount
+// #define NOZZLE_TO_PROBE_OFFSET { 53, -3. -2.301 } - Satana BLTouch Mount
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 20
+#define PROBING_MARGIN 30
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_SPEED (133*60)
@@ -1181,7 +1184,7 @@
  * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  */
-//#define FILAMENT_RUNOUT_SENSOR
+#define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
@@ -1214,13 +1217,13 @@
   // After a runout is detected, continue printing this length of filament
   // before executing the runout script. Useful for a sensor at the end of
   // a feed tube. Requires 4 bytes SRAM per sensor, plus 4 bytes overhead.
-  //#define FILAMENT_RUNOUT_DISTANCE_MM 7
+  #define FILAMENT_RUNOUT_DISTANCE_MM 7
 
-  #ifdef FILAMENT_RUNOUT_DISTANCE_MM
+  #ifdef FILAMENT_RUNOUT_DISTANCE_MM 
     // Enable this option to use an encoder disc that toggles the runout pin
     // as the filament moves. (Be sure to set FILAMENT_RUNOUT_DISTANCE_MM
     // large enough to avoid false positives.)
-    //#define FILAMENT_MOTION_SENSOR
+    #define FILAMENT_MOTION_SENSOR
   #endif
 #endif
 
@@ -1538,8 +1541,8 @@
 #define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "PETG"
-#define PREHEAT_2_TEMP_HOTEND 245
-#define PREHEAT_2_TEMP_BED    80
+#define PREHEAT_2_TEMP_HOTEND 240
+#define PREHEAT_2_TEMP_BED    75
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_3_LABEL       "ABL"
@@ -2400,14 +2403,14 @@
 // Use software PWM to drive the fan, as for the heaters. This uses a very low frequency
 // which is not as annoying as with the hardware PWM. On the other hand, if this frequency
 // is too low, you should also increment SOFT_PWM_SCALE.
-//#define FAN_SOFT_PWM
+#define FAN_SOFT_PWM
 
 // Incrementing this by 1 will double the software PWM frequency,
 // affecting heaters, and the fan if FAN_SOFT_PWM is enabled.
 // However, control resolution will be halved for each increment;
 // at zero value, there are 128 effective control positions.
 // :[0,1,2,3,4,5,6,7]
-#define SOFT_PWM_SCALE 0
+//#define SOFT_PWM_SCALE 0
 
 // If SOFT_PWM_SCALE is set to a value higher than 0, dithering can
 // be used to mitigate the associated resolution loss. If enabled,
