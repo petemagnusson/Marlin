@@ -511,9 +511,9 @@
     #define DEFAULT_Ki_LIST {   1.54,   1.54 }
     #define DEFAULT_Kd_LIST {  76.55,  76.55 }
   #else
-    #define DEFAULT_Kp  22.75
-    #define DEFAULT_Ki   1.76
-    #define DEFAULT_Kd  73.40
+    #define DEFAULT_Kp  24.34
+    #define DEFAULT_Ki   1.98
+    #define DEFAULT_Kd  74.66
   #endif
 #endif // PIDTEMP
 
@@ -1048,7 +1048,8 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -38, +6, -2.301 }
+#define NOZZLE_TO_PROBE_OFFSET { -38, +6, -3.150 }
+//  -2.301 | -3.150
 // #define NOZZLE_TO_PROBE_OFFSET { -43.7, -7.2, -2.13 } - Default setup with BLTouch Mount
 // #define NOZZLE_TO_PROBE_OFFSET { 53, -15. -2.301 } - Satana BLTouch Mount
 // #define NOZZLE_TO_PROBE_OFFSET { -38, +6, -2.301 } Hero Me Gen 5
