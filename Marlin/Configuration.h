@@ -546,7 +546,7 @@
 
 // CHANGES HERE
 #define PIDTEMP
-#define BANG_MAX 150     // Limits current to nozzle while in bang-bang mode; 255=full current
+#define BANG_MAX 50     // Limits current to nozzle while in bang-bang mode; 255=full current
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1 0.95      // Smoothing factor within any PID loop
 
