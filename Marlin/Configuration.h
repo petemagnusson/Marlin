@@ -1048,7 +1048,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -38, +6, -0.980 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, -48, -0.980 }
 //  -2.301 | -3.150 - 0.980
 // #define NOZZLE_TO_PROBE_OFFSET { -43.7, -7.2, -2.13 } - Default setup with BLTouch Mount
 // #define NOZZLE_TO_PROBE_OFFSET { 53, -15. -2.301 } - Satana BLTouch Mount
